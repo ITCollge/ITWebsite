@@ -1,0 +1,176 @@
+html {
+  direction: rtl;
+}
+
+.fonts {
+  font-family: "Changa";
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.z-index {
+  z-index: 999;
+}
+
+.widt-pargraph {
+  width: 50%;
+}
+
+.icone-color {
+  color: rgb(13, 153, 247);
+}
+
+.active {
+  color: rgb(13, 153, 247);
+}
+
+.navbar-toggler-icon {
+  background-color: rgb(255, 255, 255);
+  width: 30px;
+  height: 5px;
+}
+
+.top {
+  top: 50.5%;
+}
+
+.border-radius {
+  border-radius: 0.2rem;
+}
+
+.m-auto{
+  margin: auto;
+}
+
+.menu-list {
+  position: absolute;
+}
+
+.menu {
+  display: none;
+  width: 100%;
+  opacity: 0;
+  transition: 0.2s;
+  z-index: 1;
+  padding: 0.2em 0.5em;
+  background-color: rgb(13, 153, 247);
+  border-radius: 2px;
+}
+
+.menu li {
+  padding: 10px 0px;
+}
+
+.a-href {
+  cursor: pointer;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: 0.3s;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.caret:hover {
+  border-top: 6px solid rgb(13, 153, 247);
+}
+
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.select {
+  display: flex;
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}
+
+main {
+  margin-top: 1em;
+}
+
+.div-shadow {
+  width: 50em;
+  height: 2em;
+  box-shadow: 0 0 10px gray;
+  margin: 0 1em 1em 0;
+}
+
+.div-container {
+  display: block;
+}
+
+.h1 {
+  text-align: right;
+  font-size: 15px;
+  padding: 2px 15px;
+}
+
+.border-bottom {
+  border-bottom: 10px solid rgb(13, 153, 247);
+}
+
+.border-radius {
+  border-radius: 5px;
+}
+
+.box-shadwo {
+  box-shadow: 0px 0px 10px black;
+}
+
+.border-col {
+  border: 2px solid rgb(13, 153, 247);
+}
+
+.width {
+  width: 70%;
+}
+
+.margin-left {
+  margin-right: 18px;
+}
+
+.doctorsi {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50px;
+}
+
+@media (max-width: 350px) {
+  *{
+    font-size: 7px;
+  }
+  .top {
+    top: 40%;
+  }
+  .widt-pargraph {
+    width: 85%;
+  }
+  #hidd {
+    display: none;
+  }
+  .width {
+    width: 65%;
+  }
+  .z-index {
+    z-index: 999;
+  }
+
+
+  .py{
+    padding-top: 20px;
+  }
+
+}/*# sourceMappingURL=style.css.map */
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/3.png">
+    <title>تسجيل دخول</title>
+</head>
+<body>
+    <style>
+        body{
+            direction: rtl;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav{
+            background-color: black;
+            color: white;
+            height: 100px;
+            display: flex;
+        }
+
+        .rowe{
+            padding-top: 60px;
+        }
+
+        .row{
+            border: 3px solid rgb(13, 153, 247);
+            width: 40%;
+            height: 400px;
+            margin: auto;
+            border-radius: 10px;
+            padding-top: 5px;
+        }
+      
+        .col{
+            padding-top: 30px;
+            text-align: center;
+            font-family: 'changa';
+        }
+
+        .form-control{
+            width: 60%;
+            height: 30px;
+            border: none;
+            border: 2px solid rgb(13, 153, 247);
+            color: black;
+        }
+
+        .button{
+            width: 60%;
+            cursor: pointer;
+            background: none;
+            border: 2px solid rgb(13, 153, 247);
+            padding: 10px;
+            font-family: 'Changa';
+            font-weight: bold;
+        }
+
+        .button:hover{
+            background-color: rgb(13, 153, 247);
+            transition: 0.8s;
+            color: white;
+        }
+
+        .logo-img{
+            display: flex;
+            padding-top: 15px;
+            margin-right: 30px;
+        }
+
+        .logo{
+            text-decoration: none;
+            margin-right: 20px;
+            color: white;
+            font-size: 18px;
+            font-family: 'changa';
+        }
+
+        .ul{
+            padding-top: 38px;
+            margin-right: 100px;
+        }
+
+        .h1-logo{
+            text-decoration: none;
+            font-family: 'changa';
+            color: white;
+            font-weight: bold;
+        }
+
+    </style>
+    <nav class="nav">
+            <div class="logo-img">
+                <img src="../img/3.png" alt="Logo" width="70px" height="70px">
+                <h1 class=" ">
+                <a href="../index.html" class="logo"> كلية تقنية المعلومات الزنتان</a>
+
+                </h1>
+            </div> 
+            <div class="ul"><a href="../index.html" class="h1-logo">الصفحة الرئيسية</a></div>
+    </nav>
+    <div class="rowe">
+    <div class="row">
+        <h1 class="col">تسجيل الدخول</h1>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="الاسم" aria-label="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="الايميل" aria-label="Last name">
+        </div>
+        <div class="col">
+            <button class="button">تسجيل الدخول</button>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

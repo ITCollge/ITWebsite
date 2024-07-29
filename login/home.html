@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كلية تقنية المعلومات</title>
+    <link rel="shortcut icon" href="/3.png">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="logo">
+            <img src="./3.png" alt="" width="80px">
+            <h1 class="h1-logo">كلية تقنية المعلومات</h1>
+            <a href="../index.html" class="main h1-logo">الصفحة الرئيسية</a>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+    <div class="login-container">
+        <h2>تسجيل الدخول</h2>
+        <form id="login-form" method="POST" action="login.php">
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" name="login">تسجيل الدخول</button>
+        </form>
+        <a href="#" id="change-password-link">تغيير كلمة المرور</a>
+    </div>
+
+    <div id="change-password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>تغيير كلمة المرور</h2>
+            <form id="change-password-form" method="POST" action="login.php">
+                <label for="new-password">كلمة المرور الجديدة:</label>
+                <input type="password" id="new-password" name="new_password" required>
+                <button type="submit" name="change_password" class="btn-inp">تغيير كلمة المرور</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./3.png">
+    <title>كلية تقنية المعلومات</title>
+    <style>
+        body {
+            direction: rtl;
+            padding: 0;
+            margin: 0;
+            font-family: 'changa';
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .news-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .h1-logo {
+            font-family: 'changa';
+        }
+        .nav {
+            background-color: black;
+            width: 100%;
+            height: 100px;
+        }
+        .logo {
+            padding-top: 8px;
+            margin-right: 30px;
+            display: flex;
+        }
+        .h1-logoo {
+            color: white;
+            font-family: 'changa';
+            margin-right: 20px;
+        }
+        .main {
+            color: white;
+            text-decoration: none;
+            padding-top: 28px;
+            font-weight: bold;
+            margin-right: 100px;
+        }
+        .main:hover {
+            color: rgb(13, 153, 247);
+            transition: 0.7s;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            max-width: 80%;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            z-index: 1000;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        .popup h2 {
+            margin: 0 0 10px;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <img src="./3.png" alt="" width="80px">
+            <h1 class="h1-logoo">كلية تقنية المعلومات</h1>
+            <a href="..//index.html" class="main h1-logo">الصفحة الرئيسية</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="h1-logo">الأخبار والإعلانات</h1>
+        <div id="news-list"></div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <button class="close-btn" id="closePopup">&times;</button>
+        <h2 id="popup-title">عنوان الخبر</h2>
+        <p id="popup-content">هذا نص داخل النافذة المنبثقة.</p>
+    </div>
+
+    <script>
+        function loadNews() {
+            const storedNews = localStorage.getItem('news');
+            if (storedNews) {
+                const news = JSON.parse(storedNews);
+                const newsList = document.getElementById('news-list');
+                newsList.innerHTML = '';
+                news.forEach((newsItem) => {
+                    const newsDiv = document.createElement('div');
+                    newsDiv.className = 'news-item';
+                    newsDiv.innerHTML = `<h2>${newsItem.title}</h2><p>${newsItem.content}</p><a href="#" class="open-popup" data-title="${newsItem.title}" data-content="${newsItem.content}">عرض المزيد</a>`;
+                    newsList.appendChild(newsDiv);
+                });
+
+                document.querySelectorAll('.open-popup').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        document.getElementById('popup-title').innerText = this.dataset.title;
+                        document.getElementById('popup-content').innerText = this.dataset.content;
+                        document.getElementById('popup').style.display = 'block';
+                        document.getElementById('overlay').style.display = 'block';
+                        adjustPopupSize();
+                    });
+                });
+            }
+        }
+
+        function adjustPopupSize() {
+            const popup = document.getElementById('popup');
+            const content = document.getElementById('popup-content');
+            popup.style.width = 'auto';
+            popup.style.height = 'auto';
+            popup.style.maxWidth = '80%';
+            popup.style.maxHeight = '80vh';
+        }
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+        document.addEventListener('DOMContentLoaded', loadNews);
+    </script>
+</body>
+</html>
